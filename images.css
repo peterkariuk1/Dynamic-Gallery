@@ -1,0 +1,121 @@
+:root{
+    --primary-color:#d52424;
+    --accent-color:#00000081;
+}
+body{
+    padding: 40px 10px 0px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.cta-text{
+    color: var(--primary-color);
+    font: 700 13px arial;
+}
+.hero-title{
+    font: 700 32px 'Times New Roman', Times, serif;
+    margin-bottom: 15px;  
+}
+.hero-desc{
+    margin-top: 0px;
+    max-width: 820px;
+}
+.images-grid{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 10px;
+   
+
+}
+.image-grid-item{
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+}
+.image-wrapper{
+    transform: scale(1.2);
+    transition: transform .2s ease-out;
+}
+
+.grid-item-image{
+    width: 300px;
+    object-fit: cover;
+
+}
+.grid-item-details{
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    color: white;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .6s ease-in-out;
+}
+.top-details{
+    transform: translate3d(0,-6rem,0);
+    transition: transform .3s ease-out;
+}
+.image-grid-item::before{
+    content: '';
+    background-image: linear-gradient(#0000005e 60%,var(--accent-color) 40%);
+    background-color: var(--accent-color);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s ease;
+}
+.image-grid-item:hover .grid-item-details,
+.image-grid-item:hover::before,
+.image-grid-item:hover .image-wrapper,
+.image-grid-item:hover .top-details,
+.image-grid-item:hover .price-text,
+.image-grid-item:hover .image-background{
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+    transform: scale(1);
+    transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0) rotate(0deg);
+}
+.trip-duration{
+    font: 700 12px arial;
+}
+.trip-location{
+    font: 500 25px 'Times New Roman' ;
+}
+.trip-location span{
+    font-style: italic;
+}
+.location-description{
+    font: 100 11px arial;
+}
+.price-text{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    transform: translate3d(0,2rem,0);
+    transition: transform .3s ease;
+}
+.price-text span{
+    font: 500 18px 'Times New Roman';
+}
+.price-image{
+ display: flex; 
+ align-items: center;
+ column-gap: 130px;
+
+}
+.image-background{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    transform: translate3d(-3rem,0,0) rotate(360deg);
+    transition: transform .5s ease .3s;
+}
+
